@@ -61,3 +61,14 @@ deb http://old-releases.ubuntu.com/ubuntu impish-security multiverse
 # entries were disabled at the end of the installation process.
 # For information about how to configure apt package sources,
 # see the sources.list(5) manual.
+
+
+
+
+
+
+https://www.veeble.com/kb/sources-list-file-urls-ubuntu/
+
+https://github.com/simdsoft/sources.list
+
+https://gist.github.com/hakerdefo/9c99e140f543b5089e32176fe8721f5f
