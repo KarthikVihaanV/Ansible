@@ -72,3 +72,29 @@ https://www.veeble.com/kb/sources-list-file-urls-ubuntu/
 https://github.com/simdsoft/sources.list
 
 https://gist.github.com/hakerdefo/9c99e140f543b5089e32176fe8721f5f
+
+
+ansible all -m shell -a "if ! systemctl is-active systemctl; then  echo 'inactive' ; fi" -i /home/ansadmin/myconfig/hosts 
+
+
+
+- name: my playbook example
+  hosts: all
+  gather_facts: no
+  tasks:
+  - name: test_task
+    shell: "if ! systemctl is-active firewalld; then  echo 'inactive' ; fi"
+    register: firewalld_active
+    failed_when: False
+    changed_when: False
+
+  - debug: var=firewalld_active
+
+  - name: check_value_firewalld
+    debug:
+      msg: "'firewalld is inactive' if firewalld_active.stdout=='inactive' else 'service is active' "
+
+
+--check, --diff, --list-hosts, --list-tasks, and --syntax-check
+
+
